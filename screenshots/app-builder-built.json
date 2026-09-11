@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Kaliyugaa",
+      "hasCanvas": false,
+      "bodyTextLen": 3541,
+      "bodyTextHash": "a27d98562d9b84b965e4b18edc46fef24a387b13c92f222b5e1b6632cdd82812",
+      "bodyTextPrefix": "Skip to content Kaliyugaa AGS3 AGS3 Services About Contact Reque",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Kaliyugaa",
+      "hasCanvas": false,
+      "bodyTextLen": 3454,
+      "bodyTextHash": "5d3211933c6b90ddcb947c193770383d02bb61bdbff513d04355a3954d3dc81a",
+      "bodyTextPrefix": "Skip to content Kaliyugaa BENGALURU · KALIYUGAA AGS3 The operati",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}

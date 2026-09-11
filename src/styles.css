@@ -1,0 +1,171 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Instrument Serif", ui-serif, Georgia, "Times New Roman",
+    serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --color-background: #090a09;
+  --color-foreground: #f3f1ea;
+  --color-card: #121412;
+  --color-card-foreground: #f3f1ea;
+  --color-popover: #161916;
+  --color-popover-foreground: #f3f1ea;
+  --color-primary: #f3f1ea;
+  --color-primary-foreground: #090a09;
+  --color-secondary: #1a1d1a;
+  --color-secondary-foreground: #f3f1ea;
+  --color-muted: #1a1d1a;
+  --color-muted-foreground: #a3a399;
+  --color-accent: #8fa89a;
+  --color-accent-foreground: #0a0c0a;
+  --color-destructive: #c45c4a;
+  --color-destructive-foreground: #f3f1ea;
+  --color-border: #2a2c29;
+  --color-input: #2a2c29;
+  --color-ring: #8fa89a;
+  --color-line: #2a2c29;
+  --color-subtle: #6f716c;
+  --color-elevated: #1a1d1a;
+
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius: 0.75rem;
+
+  --shadow-border: 0 0 0 1px rgb(243 241 234 / 0.08);
+  --shadow-border-hover: 0 0 0 1px rgb(243 241 234 / 0.14);
+  --shadow-lift: 0 0 0 1px rgb(243 241 234 / 0.08),
+    0 24px 48px -24px rgb(0 0 0 / 0.55);
+
+  --tracking-display: -0.03em;
+  --tracking-label: 0.16em;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+    letter-spacing: var(--tracking-display);
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  img.media {
+    outline: 1px solid rgb(243 241 234 / 0.1);
+    outline-offset: -1px;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--color-accent) 35%, transparent);
+    color: var(--color-foreground);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.marquee-track {
+  animation: marquee 42s linear infinite;
+}
+
+.rise-in {
+  animation: rise 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.rise-in-1 {
+  animation-delay: 80ms;
+}
+.rise-in-2 {
+  animation-delay: 160ms;
+}
+.rise-in-3 {
+  animation-delay: 240ms;
+}
+.rise-in-4 {
+  animation-delay: 320ms;
+}
+
+.live-dot {
+  animation: pulse-dot 1.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track,
+  .rise-in,
+  .live-dot {
+    animation: none;
+  }
+}
